@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base colors */
+  --color-background: 255 255 255; /* white */
+  --color-foreground: 17 24 39; /* gray-900 */
+  
+  /* Primary colors */
+  --color-primary: 37 99 235; /* blue-600 */
+  --color-primary-hover: 29 78 216; /* blue-700 */
+  --color-primary-foreground: 255 255 255; /* white */
+  
+  /* Secondary colors */
+  --color-secondary: 241 245 249; /* slate-100 */
+  --color-secondary-hover: 226 232 240; /* slate-200 */
+  --color-secondary-foreground: 15 23 42; /* slate-900 */
+  
+  /* Muted colors */
+  --color-muted: 248 250 252; /* slate-50 */
+  --color-muted-foreground: 100 116 139; /* slate-500 */
+  
+  /* Card colors */
+  --color-card: 255 255 255; /* white */
+  --color-card-hover: 248 250 252; /* slate-50 */
+  
+  /* Border and input */
+  --color-border: 226 232 240; /* slate-200 */
+  --color-input: 226 232 240; /* slate-200 */
+  --color-ring: 37 99 235; /* blue-600 */
+  
+  /* Text colors */
+  --color-text-primary: 17 24 39; /* gray-900 */
+  --color-text-secondary: 75 85 99; /* gray-600 */
+  --color-text-muted: 107 114 128; /* gray-500 */
+  
+  /* Accent colors */
+  --color-accent-blue: 219 234 254; /* blue-100 */
+  --color-accent-blue-foreground: 29 78 216; /* blue-700 */
+  --color-accent-green: 220 252 231; /* green-100 */
+  --color-accent-green-foreground: 22 163 74; /* green-600 */
+  
+  /* Gradients */
+  --gradient-from: 219 234 254; /* blue-50 */
+  --gradient-via: 255 255 255; /* white */
+  --gradient-to: 243 232 255; /* purple-50 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  /* Base colors */
+  --color-background: 15 23 42; /* slate-900 */
+  --color-foreground: 241 245 249; /* slate-100 */
+  
+  /* Primary colors */
+  --color-primary: 59 130 246; /* blue-500 */
+  --color-primary-hover: 37 99 235; /* blue-600 */
+  --color-primary-foreground: 255 255 255; /* white */
+  
+  /* Secondary colors */
+  --color-secondary: 30 41 59; /* slate-800 */
+  --color-secondary-hover: 51 65 85; /* slate-700 */
+  --color-secondary-foreground: 241 245 249; /* slate-100 */
+  
+  /* Muted colors */
+  --color-muted: 30 41 59; /* slate-800 */
+  --color-muted-foreground: 148 163 184; /* slate-400 */
+  
+  /* Card colors */
+  --color-card: 30 41 59; /* slate-800 */
+  --color-card-hover: 51 65 85; /* slate-700 */
+  
+  /* Border and input */
+  --color-border: 51 65 85; /* slate-700 */
+  --color-input: 51 65 85; /* slate-700 */
+  --color-ring: 59 130 246; /* blue-500 */
+  
+  /* Text colors */
+  --color-text-primary: 241 245 249; /* slate-100 */
+  --color-text-secondary: 203 213 225; /* slate-300 */
+  --color-text-muted: 148 163 184; /* slate-400 */
+  
+  /* Accent colors */
+  --color-accent-blue: 30 58 138; /* blue-900 with opacity */
+  --color-accent-blue-foreground: 147 197 253; /* blue-300 */
+  --color-accent-green: 20 83 45; /* green-900 with opacity */
+  --color-accent-green-foreground: 134 239 172; /* green-300 */
+  
+  /* Gradients */
+  --gradient-from: 17 24 39; /* gray-900 */
+  --gradient-via: 31 41 55; /* gray-800 */
+  --gradient-to: 17 24 39; /* gray-900 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Define Tailwind color utilities */
+@layer utilities {
+  .bg-background { background-color: rgb(var(--color-background)); }
+  .bg-foreground { background-color: rgb(var(--color-foreground)); }
+  .bg-card { background-color: rgb(var(--color-card)); }
+  .bg-card-hover { background-color: rgb(var(--color-card-hover)); }
+  .bg-primary { background-color: rgb(var(--color-primary)); }
+  .bg-primary-hover { background-color: rgb(var(--color-primary-hover)); }
+  .bg-secondary { background-color: rgb(var(--color-secondary)); }
+  .bg-secondary-hover { background-color: rgb(var(--color-secondary-hover)); }
+  .bg-muted { background-color: rgb(var(--color-muted)); }
+  .bg-accent-blue { background-color: rgb(var(--color-accent-blue)); }
+  .bg-accent-green { background-color: rgb(var(--color-accent-green)); }
+  
+  .text-foreground { color: rgb(var(--color-foreground)); }
+  .text-primary { color: rgb(var(--color-text-primary)); }
+  .text-secondary { color: rgb(var(--color-text-secondary)); }
+  .text-muted { color: rgb(var(--color-text-muted)); }
+  .text-primary-foreground { color: rgb(var(--color-primary-foreground)); }
+  .text-accent-blue { color: rgb(var(--color-accent-blue-foreground)); }
+  .text-accent-green { color: rgb(var(--color-accent-green-foreground)); }
+  
+  .border-border { border-color: rgb(var(--color-border)); }
+  .border-primary { border-color: rgb(var(--color-primary)); }
+  .border-muted { border-color: rgb(var(--color-muted)); }
+  
+  .ring-ring { --tw-ring-color: rgb(var(--color-ring)); }
+  
+  .gradient-hero {
+    background: linear-gradient(to bottom right, 
+      rgb(var(--gradient-from)), 
+      rgb(var(--gradient-via)), 
+      rgb(var(--gradient-to))
+    );
   }
 }
 
+* {
+  border-color: rgb(var(--color-border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-foreground));
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-ring));
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: rgb(var(--color-primary));
+  color: rgb(var(--color-primary-foreground));
 }
