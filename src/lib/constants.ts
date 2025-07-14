@@ -1,5 +1,5 @@
 // Career start date - when I began my software engineering journey at Digilens
-export const CAREER_START_DATE = '2018-07-01';
+export const CAREER_START_DATE = '2020-06-01';
 
 // Contact information
 export const CONTACT_INFO = {

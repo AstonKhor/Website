@@ -19,10 +19,34 @@ export default function Projects() {
       metrics: {
         downloads: '500K+',
         rating: '4.7/5',
-        reviews: '12K+'
+        reviews: '19K+'
+      },
+      links: {
+        appStore: 'https://apps.apple.com/us/app/cointracker-portfolio-taxes/id1401499763',
+        googlePlay: 'https://play.google.com/store/apps/details?id=io.cointracker.android&hl=en_US'
       },
       icon: DevicePhoneMobileIcon,
       category: 'Mobile App'
+    },
+    {
+      title: 'CoinTracker Web App',
+      description: 'Web application for cryptocurrency portfolio tracking and tax preparation with 1M+ users and 4.7-star rating.',
+      technologies: ['React', 'TypeScript', 'Redux', 'React Native Reanimated'],
+      features: [
+        'Real-time cryptocurrency portfolio tracking',
+        'Tax center with automated calculations',
+        'Spam classification for transactions',
+        'Interactive dashboard with charts',
+        'Cross-platform iOS and Android support'
+      ],
+      metrics: {
+        users: '2.5M+',
+      },
+      links: {
+        website: 'https://cointracker.com'
+      },
+      icon: GlobeAltIcon,
+      category: 'Web App'
     },
     {
       title: 'Mirror Protocol Autostaker',
@@ -130,6 +154,42 @@ export default function Projects() {
                         >
                           <CodeBracketIcon className="h-4 w-4" />
                           GitHub
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                        </a>
+                      )}
+                      {project.links.appStore && (
+                        <a
+                          href={project.links.appStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors duration-200"
+                        >
+                          <DevicePhoneMobileIcon className="h-4 w-4" />
+                          App Store
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                        </a>
+                      )}    
+                      {project.links.googlePlay && (
+                        <a
+                          href={project.links.googlePlay}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors duration-200"
+                        >
+                          <DevicePhoneMobileIcon className="h-4 w-4" />
+                          Google Play
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                        </a>
+                      )}
+                      {project.links.website && (
+                        <a
+                          href={project.links.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-colors duration-200"
+                        >
+                          <GlobeAltIcon className="h-4 w-4" />
+                          Website
                           <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                         </a>
                       )}

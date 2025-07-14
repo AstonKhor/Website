@@ -33,8 +33,9 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Senior Software Engineer specializing in{' '}
-            <span className="text-blue-600 font-semibold">frontend</span> and{' '}
-            <span className="text-purple-600 font-semibold">mobile development</span>{' '}
+            <span className="text-accent-blue font-semibold">product</span>,{' '}
+            <span className="text-accent-blue font-semibold">frontend</span>, and{' '}
+            <span className="text-accent-blue font-semibold">mobile</span>{' '}
             with {yearsOfExperience}+ years of experience building products that users love.
           </motion.p>
 
@@ -72,7 +73,7 @@ export default function Home() {
               <div className="text-sm text-muted">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-primary">1M+</div>
+              <div className="text-2xl sm:text-3xl font-bold text-primary">2M+</div>
               <div className="text-sm text-muted">Users Reached</div>
             </div>
             <div className="text-center">
